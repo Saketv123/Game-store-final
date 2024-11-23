@@ -1,0 +1,21 @@
+{
+    "name": "Game-Store",
+    "short_name": "GS",
+
+    "description": "Game Store as a Progressive Web App",
+
+    "scope": "/Game-store-final/",
+    "start_url": "/Game-store-final/",
+   
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+
+    "display": "standalone", 
+    "icons": [
+        {
+          "src": "/Game-store-final/img/icon512.png",
+          "type": "image/png",
+          "sizes": "700x700"
+        }
+    ]
+  }
