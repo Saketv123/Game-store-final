@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Start</title>
+    <title>Game Store</title>
+    <link rel="canonical" href="https:saketv123.github.io/Game-store-final" />
+    <link rel="manifest" href="/Game-store-final/manifest.webmanifest">
     <link rel="stylesheet" href="converter.css">
 </head>
 <body>
     <header>
-        <h1>Game Store</h1>
+        <h1>Game Store</h1>    
         <nav>
-            <button onclick="window.history.back()">Back</button>
+            <a href="form.html">
+                <button>Add a Game</button>
+            </a>
         </nav>
     </header>
     <main>
+
+        <img src = "gamestore.png">
+        <p>Description: This webpage displays all of the world's most popular games! You can even list your favourite game by clicking the 'Add a Game' button!</p>
         <h2>Games</h2>
-        <form id="addGameForm">
-            <label for="gameInput">Game Title:</label>
-            <input type="text" id="gameInput" placeholder="e.g. Minecraft" required />
-
-            <label for="priceInput">Price ($):</label>
-            <input type="number" id="priceInput" placeholder="e.g. 19.99" required />
-
-            <label for="descriptionInput">Description:</label>
-            <textarea id="descriptionInput" placeholder="Enter a short description" required></textarea>
-
-            <button type="submit">Add Game</button>
-        </form>
-
         <section id="gameList"></section>
     </main>
     <script type="module">
@@ -83,6 +77,14 @@
                 }
             }
         });
+    </script>
+    <script>
+    if (navigator.sw) {
+        navigator.sw.register(
+          '/Game-store-final/sw.js',
+          {scope: '/Game-store-final/'}
+        )
+      }
     </script>
 </body>
 </html>
