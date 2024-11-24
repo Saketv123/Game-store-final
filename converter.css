@@ -59,3 +59,18 @@ article {
   }
 }
 .button1 {border-radius: 2px;}
+
+nav button {
+  padding: 10px;
+  background-color: #61a2ad;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  padding-bottom: 30px;
+}
