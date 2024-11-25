@@ -13,7 +13,7 @@
     "display": "standalone", 
     "icons": [
         {
-          "src": "/Game-store-final/icon512.png",
+          "src": "/blob/main/icon512.png",
           "type": "image/png",
           "sizes": "700x700"
         }
