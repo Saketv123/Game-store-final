@@ -57,26 +57,6 @@
             });
         }
         window.onload = loadGames;
-        document.getElementById('addGameForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const gameInput = document.getElementById('gameInput').value.trim();
-            const priceInput = parseFloat(document.getElementById('priceInput').value);
-            const descriptionInput = document.getElementById('descriptionInput').value.trim();
-
-            if (gameInput && priceInput && descriptionInput) {
-                try {
-                    await addDoc(collection(db, 'games'), {
-                        title: gameInput,
-                        price: priceInput,
-                        description: descriptionInput
-                    });
-                    document.getElementById('addGameForm').reset();
-                    loadGames();
-                } catch (error) {
-                    console.error('Error adding game:', error);
-                }
-            }
-        });
     </script>
     <script>
     if (navigator.sw) {
