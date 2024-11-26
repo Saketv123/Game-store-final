@@ -11,11 +11,4 @@
     "theme_color": "#ffffff",
 
     "display": "standalone", 
-    "icons": [
-        {
-          "src": "https://github.com/Saketv123/Game-store-final/blob/main/icon512.png",
-          "type": "image/png",
-          "sizes": "700x700"
-        }
-    ]
   }
