@@ -105,13 +105,9 @@
         });
     </script>
     <script>
-    //Linking service worker to Github page
-    if (navigator.sw) {
-        navigator.sw.register(
-          '/Game-store-final/sw.js',
-          {scope: '/Game-store-final/'}
-        )
-      }
+    if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/Game-store-final/sw.js', { scope: '/' });
+    }
     </script>
 </body>
 </html>
