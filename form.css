@@ -5,9 +5,13 @@
     font-family: Arial, sans-serif;
   }
   header {
+    font-size: 12px;
     background-color: #f5f5f5;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+  }
+  header h1{
+    text-align: center;
   }
   main {
     padding: 20px;
@@ -27,12 +31,13 @@
   }
   form button {
     padding: 10px 20px;
-    background-color: #61a2ad;
+    background-color: #a600ff;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    left: ();
   }
   article {
     border: 1px solid #ddd;
@@ -56,10 +61,16 @@
   
   nav button {
     padding: 10px;
-    background-color: #61a2ad;
+    background-color: #a600ff;
     color: #fff;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+  }
+  #gameList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
   }
