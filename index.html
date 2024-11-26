@@ -90,9 +90,10 @@
         </section>
     </main>
     <script>
-        if (navigator && navigator.serviceWorker) {
-            navigator.serviceWorker.register('sw.js');
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' });
         }
+    </script>
 </script>
 </body>
 </html>
