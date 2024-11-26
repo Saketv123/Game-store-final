@@ -23,6 +23,11 @@ header h1 {
 header nav button:hover {
   background-color: #61a2ad;
 }
+header nav img{
+  width: 5%;
+  height: 5%;
+}
+  
 form input[type="text"], form input[type="number"], form textarea {
   width: 100%;
   padding: 10px;
