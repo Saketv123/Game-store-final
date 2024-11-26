@@ -6,8 +6,10 @@ self.addEventListener('install', event => {
     const cache = await caches.open(CACHE_NAME);
     cache.addAll([
       '/',
-      '/converter.js',
+      '/form.html',
+      '/form.html',
       '/converter.css'
+      '/index.html',
     ]);
   })());
 });
