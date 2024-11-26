@@ -1,4 +1,4 @@
-const CACHE_NAME = `temperature-converter-v1`;
+const CACHE_NAME = `game-store-v1`;
 
 // Use the install event to pre-cache all initial resources.
 self.addEventListener('install', event => {
@@ -7,9 +7,11 @@ self.addEventListener('install', event => {
     cache.addAll([
       '/',
       '/form.html',
-      '/form.html',
-      '/converter.css'
+      '/form.css',
+      '/converter.css',
       '/index.html',
+      '/gamestore.png',
+      '/manifest.json
     ]);
   })());
 });
