@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Store</title>
     <link rel="canonical" href="https:saketv123.github.io/Game-store-final" />
-    <link rel="manifest" href="/Game-store-final/manifest.webmanifest">
     <link rel="stylesheet" href="converter.css">
 </head>
 <body>
@@ -19,51 +18,76 @@
         </nav>
     </header>
     <main>
-        <p>Description: This webpage displays all of the world's most popular games! You can even list your favourite game by clicking the 'Add a Game' button!</p>
-        <h2>Games</h2>
-        <section id="gameList"></section>
+
+        <p>
+            Welcome to the Game Store, your ultimate destination for exploring the most popular games around the globe! 
+            Dive into a curated selection of 12 must-play games that have captured the hearts of millions. 
+            From action-packed adventures to relaxing simulations, there's something here for every gamer. 
+        </p>
+        <h2>Official Games</h2>
+        <section id="gameList">
+            <!-- Hardcoded game list -->
+            <article>
+                <h3>The Legend of Zelda: Breath of the Wild</h3>
+                <p><strong>Price:</strong> $59.99</p>
+                <p><strong>Description:</strong> Embark on a journey through the vast and breathtaking world of Hyrule. Solve puzzles, battle foes, and discover countless secrets in this revolutionary open-world game.</p>
+            </article>
+            <article>
+                <h3>Red Dead Redemption 2</h3>
+                <p><strong>Price:</strong> $49.99</p>
+                <p><strong>Description:</strong> Immerse yourself in the rugged Wild West. Experience a gripping story of loyalty and betrayal while enjoying stunning graphics and dynamic gameplay.</p>
+            </article>
+            <article>
+                <h3>God of War (2018)</h3>
+                <p><strong>Price:</strong> $39.99</p>
+                <p><strong>Description:</strong> Follow Kratos and his son Atreus in a deeply emotional journey through the mystical lands of Norse mythology. Known for its intense combat and heartfelt storytelling.</p>
+            </article>
+            <article>
+                <h3>Mario Kart 8 Deluxe</h3>
+                <p><strong>Price:</strong> $59.99</p>
+                <p><strong>Description:</strong> Race through thrilling tracks with friends or solo. This definitive version of Mario Kart is perfect for hours of chaotic fun and friendly competition.</p>
+            </article>
+            <article>
+                <h3>Minecraft</h3>
+                <p><strong>Price:</strong> $26.95</p>
+                <p><strong>Description:</strong> Let your imagination run wild in a blocky sandbox world. Build epic structures, explore uncharted territories, and craft tools to survive.</p>
+            </article>
+            <article>
+                <h3>Fortnite</h3>
+                <p><strong>Price:</strong> Free</p>
+                <p><strong>Description:</strong> Drop into a battle royale frenzy and fight for survival against 99 other players. Known for its unique building mechanics and constant updates.</p>
+            </article>
+            <article>
+                <h3>Call of Duty: Modern Warfare II</h3>
+                <p><strong>Price:</strong> $69.99</p>
+                <p><strong>Description:</strong> Dominate the battlefield with fast-paced action and tactical gameplay. The sequel to a fan-favorite game, packed with stunning visuals and gripping multiplayer modes.</p>
+            </article>
+            <article>
+                <h3>Animal Crossing: New Horizons</h3>
+                <p><strong>Price:</strong> $59.99</p>
+                <p><strong>Description:</strong> Escape to a peaceful island paradise where you can create your dream home, befriend adorable animals, and customize your world however you like.</p>
+            </article>
+            <article>
+                <h3>Hollow Knight</h3>
+                <p><strong>Price:</strong> $14.99</p>
+                <p><strong>Description:</strong> Venture into a hauntingly beautiful world filled with mysteries and challenging foes. This critically acclaimed indie game is known for its depth and atmosphere.</p>
+            </article>
+            <article>
+                <h3>Stardew Valley</h3>
+                <p><strong>Price:</strong> $14.99</p>
+                <p><strong>Description:</strong> Live the farm life of your dreams! Tend crops, raise animals, and even fall in love in this heartwarming simulation game.</p>
+            </article>
+            <article>
+                <h3>Cyberpunk 2077</h3>
+                <p><strong>Price:</strong> $59.99</p>
+                <p><strong>Description:</strong> Explore a futuristic open world filled with cyber-enhanced characters, thrilling missions, and a compelling narrative. A must-play for RPG enthusiasts.</p>
+            </article>
+            <article>
+                <h3>The Witcher 3: Wild Hunt</h3>
+                <p><strong>Price:</strong> $39.99</p>
+                <p><strong>Description:</strong> Step into the boots of Geralt of Rivia in this epic RPG filled with unforgettable characters, gripping quests, and a vast open world to explore.</p>
+            </article>
+        </section>
     </main>
-    <script type="module">
-        // Import Firebase Modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBnu1uKQLXHtsd1oj7_NXgqnx8P2PQrpWU",
-            authDomain: "software-hsc-at-1-pwa.firebaseapp.com",
-            projectId: "software-hsc-at-1-pwa",
-            storageBucket: "software-hsc-at-1-pwa.firebasestorage.app",
-            messagingSenderId: "278455505711",
-            appId: "1:278455505711:web:0957ee9cd595d4bfd047da"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        async function loadGames() {
-            const querySnapshot = await getDocs(collection(db, 'games'));
-            const gameList = document.getElementById('gameList');
-            gameList.innerHTML = "";
-            querySnapshot.forEach((doc) => {
-                const { title, price, description } = doc.data();
-                const gameItem = document.createElement('article');
-                gameItem.innerHTML = `
-                    <h3>${title}</h3>
-                    <p><strong>Price:</strong> $${price}</p>
-                    <p><strong>Description:</strong> ${description}</p>
-                `;
-                gameList.appendChild(gameItem);
-            });
-        }
-        window.onload = loadGames;
-    </script>
-    <script>
-    if (navigator.sw) {
-        navigator.sw.register(
-          '/Game-store-final/sw.js',
-          {scope: '/Game-store-final/'}
-        )
-      }
-    </script>
 </body>
 </html>
