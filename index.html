@@ -90,9 +90,9 @@
         </section>
     </main>
     <script>
-        if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/Game-store-final/main/sw.js', { scope: '/' });
-        }
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('/{Game-store-final}/sw.js', {scope: '/{Game-store-final}/'})
+          }
     </script>
 </script>
 </body>
